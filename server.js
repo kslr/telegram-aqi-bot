@@ -7,6 +7,7 @@ const url = process.env.APP_URL || 'YOU_SITE_URL';
 const TelegramBot = require('node-telegram-bot-api');
 const express = require('express');
 const bodyParser = require('body-parser');
+const request = require('request');
 const bot = new TelegramBot(TOKEN);
 
 bot.setWebHook(`${url}/bot${TOKEN}`);
@@ -33,3 +34,24 @@ app.listen(PORT, () => {
 bot.on('message', function onMessage(msg) {
     bot.sendMessage(msg.chat.id, 'I am alive!');
 });
+
+bot.onText(/\/aqi (.+)/, function onEchoText(msg, match) {
+    var city = match[1];
+    console.log('query ${city} city');
+
+    request('http://aqicn.org/aqicn/json/android/${city}/json', function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            var res = JSON.parse(body);
+            console.log(res.wgt);
+
+            bot.sendPhoto(msg.chat.id, res.wgt);
+
+        } else {
+            console.error(error);
+        }
+    })
+});
+
+
+
+
