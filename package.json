@@ -11,6 +11,8 @@
     "node": "6.x"
   },
   "dependencies": {
-    "node-telegram-bot-api": "latest"
+    "node-telegram-bot-api": "latest",
+    "body-parser": "latest",
+    "express": "latest"
   }
 }
