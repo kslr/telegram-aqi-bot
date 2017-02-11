@@ -34,20 +34,19 @@ app.listen(PORT, () => {
 bot.onText(/\/aqi (.+)/, function (msg, match) {
     var city = match[1];
     console.log(`query ${city} city`);
-    if (!city) {
-        bot.sendMessage(msg.chat.id, "/aqi {Please enter a city name}");
-    } else {
-        request(`http://aqicn.org/aqicn/json/android/${city}/json`, function (error, response, body) {
-            if (!error && response.statusCode == 200) {
-                var res = JSON.parse(body);
+    request(`http://aqicn.org/aqicn/json/android/${city}/json`, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            var res = JSON.parse(body);
+            if (res.wgt) {
                 console.log(res.wgt);
                 bot.sendPhoto(msg.chat.id, res.wgt);
             } else {
-                console.error(error);
                 bot.sendMessage(msg.chat.id, `Can not find ${city} city`);
             }
-        })
-    }
+        } else {
+            console.error(error);
+        }
+    })
 });
 
 
