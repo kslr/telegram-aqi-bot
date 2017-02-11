@@ -31,21 +31,22 @@ app.listen(PORT, () => {
     console.log(`Express server is listening on ${PORT}`)
 });
 
-bot.onText(/\/aqi (.+)/, function onEchoText(msg, match) {
+bot.onText(/\/aqi (.+)/, function (msg, match) {
+    console.info(match);
     var city = match[1];
     console.log('query ${city} city');
 
-    request('http://aqicn.org/aqicn/json/android/${city}/json', function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-            var res = JSON.parse(body);
-            console.log(res.wgt);
+    // request('http://aqicn.org/aqicn/json/android/${city}/json', function (error, response, body) {
+    //     if (!error && response.statusCode == 200) {
+    //         var res = JSON.parse(body);
+    //         console.log(res.wgt);
 
-            bot.sendPhoto(msg.chat.id, res.wgt);
+    //         bot.sendPhoto(msg.chat.id, res.wgt);
 
-        } else {
-            console.error(error);
-        }
-    })
+    //     } else {
+    //         console.error(error);
+    //     }
+    // })
 });
 
 
