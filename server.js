@@ -31,10 +31,6 @@ app.listen(PORT, () => {
     console.log(`Express server is listening on ${PORT}`)
 });
 
-bot.on('message', function onMessage(msg) {
-    bot.sendMessage(msg.chat.id, 'I am alive!');
-});
-
 bot.onText(/\/aqi (.+)/, function onEchoText(msg, match) {
     var city = match[1];
     console.log('query ${city} city');
