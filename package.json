@@ -1,0 +1,16 @@
+{
+  "name": "telegram-aqi-bot",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kslr/telegram-aqi-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kslr/telegram-aqi-bot/issues"
+  },
+  "homepage": "https://github.com/kslr/telegram-aqi-bot#readme"
+}
