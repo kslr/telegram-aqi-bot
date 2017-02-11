@@ -1,16 +1,16 @@
 {
   "name": "telegram-aqi-bot",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": "Telegram AQI Bot based on nodejs",
+  "server": "server.js",
   "scripts": {
     "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kslr/telegram-aqi-bot.git"
+  "engines": {
+    "node": "6.x"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kslr/telegram-aqi-bot/issues"
-  },
-  "homepage": "https://github.com/kslr/telegram-aqi-bot#readme"
+  "dependencies": {
+    "node-telegram-bot-api": "latest"
+  }
 }
