@@ -7,14 +7,7 @@ const url = process.env.APP_URL || 'YOU_SITE_URL';
 const TelegramBot = require('node-telegram-bot-api');
 const express = require('express');
 const bodyParser = require('body-parser');
-const options = {
-  webHook: {
-    port: PORT
-  }
-};
-
-
-const bot = new TelegramBot(TOKEN, options);
+const bot = new TelegramBot(TOKEN);
 
 bot.setWebHook(`${url}/bot${TOKEN}`);
 
