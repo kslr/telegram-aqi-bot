@@ -31,7 +31,7 @@ app.listen(PORT, () => {
     console.log(`Express server is listening on ${PORT}`)
 });
 
-bot.onText(/\/aqi/, function (msg) {
+bot.onText(/^\/aqi$/, function (msg) {
   bot.sendMessage(msg.chat.id, 'Examples: /aqi beijing');
 });
 
