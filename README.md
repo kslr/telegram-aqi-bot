@@ -22,7 +22,7 @@ node server.js
 
 ## Usage
 
-可搜索用户"@AirPollution_Bot"测试。
+可搜索用户"@AirPollution_Bot"测试，支持中文、繁体中文、拼音、英语。
 
 ![images](https://github.com/kslr/telegram-aqi-bot/raw/master/screenshots/01.png)
 
