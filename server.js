@@ -38,12 +38,12 @@ bot.onText(/^\/aqi$/, function (msg) {
 bot.onText(/\/aqi (.+)/, function (msg, match) {
     var city = match[1];
     var re = /[^\u4e00-\u9fa5]|[\uFE30-\uFFA0]/;
-    if(re.test(city)) {
+    if(! re.test(city)) {
         city = pinyin(city, {
             segment: false,
             style: pinyin.STYLE_NORMAL
         });
-        city.replace(/\s+/g,"");
+        city = city.join("");
     }
 
     console.log(`query ${city} city`);
