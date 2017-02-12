@@ -1,6 +1,6 @@
 # Telegram AQI Bot
 
-Telegram AQI Bot based on nodejs
+Telegram AQI Bot based on Node.js
 
 ##Install
 
