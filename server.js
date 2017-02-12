@@ -31,6 +31,10 @@ app.listen(PORT, () => {
     console.log(`Express server is listening on ${PORT}`)
 });
 
+bot.onText(/\/aqi/, function (msg) {
+  bot.sendMessage(msg.chat.id, 'Examples: /aqi beijing');
+});
+
 bot.onText(/\/aqi (.+)/, function (msg, match) {
     var city = match[1];
     console.log(`query ${city} city`);
@@ -48,7 +52,3 @@ bot.onText(/\/aqi (.+)/, function (msg, match) {
         }
     })
 });
-
-
-
-
