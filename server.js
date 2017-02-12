@@ -8,11 +8,11 @@ const TelegramBot = require('node-telegram-bot-api');
 const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
+const pinyin = require("pinyin");
 const bot = new TelegramBot(TOKEN);
+const app = express();
 
 bot.setWebHook(`${url}/bot${TOKEN}`);
-
-const app = express();
 
 // parse the updates to JSON
 app.use(bodyParser.json());
@@ -37,6 +37,15 @@ bot.onText(/^\/aqi$/, function (msg) {
 
 bot.onText(/\/aqi (.+)/, function (msg, match) {
     var city = match[1];
+    var re = /[^\u4e00-\u9fa5]|[\uFE30-\uFFA0]/;
+    if(re.test(city)) {
+        city = pinyin(city, {
+            segment: false,
+            style: pinyin.STYLE_NORMAL
+        });
+        city.replace(/\s+/g,"");
+    }
+
     console.log(`query ${city} city`);
     request(`http://aqicn.org/aqicn/json/android/${city}/json`, function (error, response, body) {
         if (!error && response.statusCode == 200) {
