@@ -14,6 +14,7 @@
     "node-telegram-bot-api": "latest",
     "body-parser": "latest",
     "express": "latest",
-    "request": "latest"
+    "request": "latest",
+    "pinyin": "~2.8.0"
   }
 }
