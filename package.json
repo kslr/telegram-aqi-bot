@@ -24,7 +24,7 @@
     "eslint-plugin-react": "^6.9.0",
     "express": "latest",
     "node-telegram-bot-api": "latest",
-    "pinyin": "latest",
+    "pinyin": "~2.8.0",
     "request": "latest"
   }
 }
