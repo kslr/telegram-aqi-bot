@@ -15,16 +15,5 @@
   },
   "engines": {
     "node": "6.x"
-  },
-  "devDependencies": {
-    "body-parser": "latest",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.9.0",
-    "express": "latest",
-    "node-telegram-bot-api": "latest",
-    "pinyin": "~2.8.0",
-    "request": "latest"
   }
 }
