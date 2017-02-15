@@ -3,7 +3,7 @@ const pinyin = require('pinyin');
 const request = require('request');
 
 const tips = '例: /aqi 济南  (城市名支持中文、繁体中文、拼音、英文)';
-const bot = new TelegramBot(process.env.TOKEN, {
+const bot = new TelegramBot(process.env.TELEGRAM_TOKEN, {
   polling: true,
   onlyFirstMatch: true,
 });
