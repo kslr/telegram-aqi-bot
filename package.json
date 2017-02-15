@@ -1,19 +1,23 @@
 {
   "name": "telegram-aqi-bot",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "dependencies": {
-    "node-telegram-bot-api": "latest",
-    "body-parser": "latest",
-    "express": "latest",
-    "request": "latest",
-    "pinyin": "~2.8.0"
+  "author": "Kslr <hi@kslr.org>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kslr/telegram-aqi-bot.git"
   },
-  "server": "server.js",
-  "scripts": {
-    "start": "node server.js"
+  "bugs": {
+    "url": "https://github.com/kslr/telegram-aqi-bot/issues"
   },
+  "license": "MIT",
   "engines": {
     "node": "6.x"
+  },
+  "main": "server.js",
+  "dependencies": {
+    "node-telegram-bot-api": "latest",
+    "request": "latest",
+    "pinyin": "~2.8.0"
   }
 }
