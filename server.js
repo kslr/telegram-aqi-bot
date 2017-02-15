@@ -1,15 +1,15 @@
-const config = require('./config');
 const TelegramBot = require('node-telegram-bot-api');
 const pinyin = require('pinyin');
 const request = require('request');
 
-const bot = new TelegramBot(config.token, {
+const tips = '例: /aqi 济南  (城市名支持中文、繁体中文、拼音、英文)';
+const bot = new TelegramBot(process.env.TOKEN, {
   polling: true,
   onlyFirstMatch: true,
 });
 
 bot.onText(/^\/aqi$/, (msg) => {
-  bot.sendMessage(msg.chat.id, config.tips);
+  bot.sendMessage(msg.chat.id, tips);
 });
 
 bot.onText(/\/aqi (.+)/, (msg, match) => {
@@ -31,7 +31,7 @@ bot.onText(/\/aqi (.+)/, (msg, match) => {
         console.log(res.wgt);
         bot.sendPhoto(msg.chat.id, res.wgt);
       } else {
-        bot.sendMessage(msg.chat.id, config.not_find_city_tips);
+        bot.sendMessage(msg.chat.id, `抱歉，没有找到${city}市，请检查拼写`);
       }
     } else {
       console.error(error);
@@ -40,7 +40,7 @@ bot.onText(/\/aqi (.+)/, (msg, match) => {
 });
 
 bot.onText(/(.+)/, (msg) => {
-  bot.sendMessage(msg.chat.id, config.tips);
+  bot.sendMessage(msg.chat.id, tips);
 });
 
 
