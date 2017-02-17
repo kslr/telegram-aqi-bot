@@ -16,7 +16,7 @@ bot.onText(/\/aqi (.+)/, (msg, match) => {
   const re = /[^\u4e00-\u9fa5]|[\uFE30-\uFFA0]/;
   if (!re.test(city)) {
     city = pinyin(city, {
-      segment: false,
+      segment: true,
       style: pinyin.STYLE_NORMAL,
     });
     city = city.join('');
