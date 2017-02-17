@@ -2,14 +2,13 @@ const TelegramBot = require('node-telegram-bot-api');
 const pinyin = require('pinyin');
 const request = require('request');
 
-const tips = '例: /aqi 济南  (城市名支持中文、繁体中文、拼音、英文)';
 const bot = new TelegramBot(process.env.TELEGRAM_TOKEN, {
   polling: true,
   onlyFirstMatch: true,
 });
 
 bot.onText(/^\/aqi$/, (msg) => {
-  bot.sendMessage(msg.chat.id, tips);
+  bot.sendMessage(msg.chat.id, '例: /aqi 济南  (城市名支持中文、繁体中文、拼音、英文)');
 });
 
 bot.onText(/\/aqi (.+)/, (msg, match) => {
@@ -38,11 +37,6 @@ bot.onText(/\/aqi (.+)/, (msg, match) => {
     }
   });
 });
-
-bot.onText(/(.+)/, (msg) => {
-  bot.sendMessage(msg.chat.id, tips);
-});
-
 
 bot.on('polling_error', (error) => {
   console.error(error.code);
