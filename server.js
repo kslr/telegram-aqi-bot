@@ -25,9 +25,9 @@ bot.onText(/\/aqi (.+)/, (msg, match) => {
   console.log(`query ${city} city`);
   request(`http://aqicn.org/city/${city}/cn/m`, (error, response, body) => {
     if (!error && response.statusCode === 200) {
-      const image_url = body.match(/(http:\/\/wgt.aqicn.org\/aqiwgt\/\d+\/[a-zA-Z0-9_-]+.png)/i);
-      if (image_url.length > 0) {
-        bot.sendPhoto(msg.chat.id, image_url[0]);
+      const imageUrl = body.match(/(http:\/\/wgt.aqicn.org\/aqiwgt\/\d+\/[a-zA-Z0-9_-]+.png)/i);
+      if (imageUrl) {
+        bot.sendPhoto(msg.chat.id, imageUrl[0]);
       } else {
         bot.sendMessage(msg.chat.id, `抱歉，没有找到${city}市，请检查拼写`);
       }
