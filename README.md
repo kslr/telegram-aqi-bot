@@ -2,26 +2,21 @@
 
 Telegram AQI Bot based on Node.js
 
-##Install
-
-| 环境变量           |    示例     |        描述        |
-| -------------- | :-------: | :--------------: |
-| TELEGRAM_TOKEN | xxxx:xxxx | Telegram机器人Token |
-
+### Run
 
 ```
 git clone https://github.com/kslr/telegram-aqi-bot.git
-TELEGRAM_TOKEN=xxx node server.js
+node server.js -t {bot token}
 ```
 
-## Usage
+### Usage
 
-使用[@AirPollution_Bot](http://telegram.me/AirPollution_Bot)测试，支持中文、繁体中文、拼音、英语。
+Use [@AirPollution_Bot](http://telegram.me/AirPollution_Bot) test. 支持中文 / 繁体中文 / 拼音 / English.
 
 ![images](https://github.com/kslr/telegram-aqi-bot/raw/master/screenshots/01.png)
 
 
-## Support
+### Support
 
 If you are having problems with telegram-aqi-bot, please raise an
 [issue on github](https://github.com/kslr/telegram-aqi-bot/issues).

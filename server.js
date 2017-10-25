@@ -1,8 +1,15 @@
 const TelegramBot = require('node-telegram-bot-api');
 const pinyin = require('pinyin');
 const request = require('request');
+const program = require('commander');
 
-const bot = new TelegramBot(process.env.TELEGRAM_TOKEN, {
+program
+  .version('2.0.1')
+  .option('-t, --token [value]', 'Telegram Bot Token')
+  .parse(process.argv);
+
+
+const bot = new TelegramBot(program.token, {
   polling: true,
   onlyFirstMatch: true,
 });
@@ -38,5 +45,5 @@ bot.onText(/\/aqi (.+)/, (msg, match) => {
 
 bot.on('polling_error', (error) => {
   console.error(error.code);
-  console.error(error.response.body);
+  console.error(error.response);
 });
