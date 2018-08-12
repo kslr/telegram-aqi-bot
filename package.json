@@ -1,7 +1,6 @@
 {
   "name": "telegram-aqi-bot",
   "version": "2.0.1",
-  "private": true,
   "author": "Kslr <hi@kslr.org>",
   "repository": {
     "type": "git",
@@ -11,9 +10,6 @@
     "url": "https://github.com/kslr/telegram-aqi-bot/issues"
   },
   "license": "MIT",
-  "engines": {
-    "node": "6.x"
-  },
   "main": "server.js",
   "dependencies": {
     "commander": "^2.11.0",
