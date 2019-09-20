@@ -14,7 +14,7 @@
   "dependencies": {
     "commander": "^2.11.0",
     "node-telegram-bot-api": "latest",
-    "pinyin": "~2.8.0",
+    "pinyin": "~2.9.0",
     "request": "latest"
   }
 }
