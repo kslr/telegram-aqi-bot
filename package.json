@@ -12,7 +12,7 @@
   "license": "MIT",
   "main": "server.js",
   "dependencies": {
-    "commander": "^2.11.0",
+    "commander": "^3.0.0",
     "node-telegram-bot-api": "latest",
     "pinyin": "~2.8.0",
     "request": "latest"
