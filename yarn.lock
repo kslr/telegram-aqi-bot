@@ -355,9 +355,9 @@ performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
 
-pinyin@~2.8.0:
-  version "2.8.3"
-  resolved "https://registry.yarnpkg.com/pinyin/-/pinyin-2.8.3.tgz#301ccb4358ccfe802523c4bd640a612bee4d7c4b"
+pinyin@~2.9.0:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/pinyin/-/pinyin-2.9.0.tgz#1e77025bf4fafdad4ea410022837b5f97e53aab1"
   dependencies:
     commander "~1.1.1"
     object-assign "^4.0.1"
